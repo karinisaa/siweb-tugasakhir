@@ -1,11 +1,179 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sistem Manajemen Kost</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+    <!-- Navbar (hapus bg-dark karena sudah diatur di CSS beige) -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">KARINA KOST</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#form">Tambah Penghuni</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero text-center text-white">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Sistem Manajemen Kost</h1>
+            <p class="lead">Kelola kamar, penghuni, dan pembayaran kost dengan mudah dan modern</p>
+            <a href="#form" class="btn btn-primary mt-3">Tambah Penghuni</a>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="container my-5">
+        <div class="row text-center g-4">
+            <div class="col-md-4">
+                <div class="card dashboard-card shadow-sm">
+                    <div class="card-body">
+                        <h5>Total Kamar</h5>
+                        <h2>20</h2>
+                    </div>
+                </div>  
+            </div>
+
+            <div class="col-md-4">
+                <div class="card dashboard-card shadow-sm">
+                    <div class="card-body">
+                        <h5>Kamar Terisi</h5>
+                        <h2>10</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card dashboard-card shadow-sm">
+                    <div class="card-body">
+                        <h5>Kamar Kosong</h5>
+                        <h2>3</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Daftar Kamar -->
+    <div class="container mt-5">
+        <h3 class="mb-4 text-center fw-bold">Daftar Kamar Kost</h3>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="assets/tipe kamar 1.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Kamar 1</h5>
+                        <p class="card-text">Harga: Rp 1.300.000 / bulan</p>
+                        <p class="card-text">Status: Terisi</p>
+                        <button class="btn btn-primary w-100">Detail</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="assets/tipe kamar 2.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Kamar 2</h5>
+                        <p class="card-text">Harga: Rp 1.500.000 / bulan</p>
+                        <p class="card-text">Status: Kosong</p>
+                        <button class="btn btn-primary w-100">Detail</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="assets/tipe kamar 3.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Kamar 3</h5>
+                        <p class="card-text">Harga: Rp 2.000.000 / bulan</p>
+                        <p class="card-text">Status: Terisi</p>
+                        <button class="btn btn-primary w-100">Detail</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="assets/tipe kamar 4.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Kamar 4</h5>
+                        <p class="card-text">Harga: Rp 1.800.000 / bulan</p>
+                        <p class="card-text">Status: Kosong</p>
+                        <button class="btn btn-primary w-100">Detail</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="assets/tipe kamar 5.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Kamar 5</h5>
+                        <p class="card-text">Harga: Rp 2.500.000 / bulan</p>
+                        <p class="card-text">Status: Kosong</p>
+                        <button class="btn btn-primary w-100">Detail</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Form Tambah Penghuni -->
+    <div class="container mt-5 mb-5" id="form">
+        <h3 class="mb-4 text-center fw-bold">Tambah Data Penghuni</h3>
+        
+        <div class="card p-4 shadow-sm">
+            <form>
+                <div class="mb-3">
+                    <label class="form-label">Nama Penghuni</label>
+                    <input type="text" class="form-control" placeholder="Masukkan nama penghuni"/>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Nomor Kamar</label>
+                    <input type="text" class="form-control" placeholder="Masukkan nomor kamar"/>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">No. Telepon</label>
+                    <input type="text" class="form-control" placeholder="Masukkan nomor telepon"/>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Tanggal Masuk</label>
+                    <input type="date" class="form-control"/>
+                </div>
+
+                <button type="submit" class="btn btn-success w-100">Simpan Data</button>
+            </form>
+        </div>
+    </div>
     
+    <footer class="text-white text-center py-3">
+        © 2026 Sistem Manajemen Kost - Karina Kost.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
