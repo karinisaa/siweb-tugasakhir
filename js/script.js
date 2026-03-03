@@ -96,6 +96,12 @@ function clearWishlist() {
 }
 
 function bindInteraction() {
+    document.querySelectorAll('.card-body .btn').forEach(btn => {
+        if (btn.textContent.trim().toLowerCase() === 'beli') {
+            btn.classList.add('btn-buy');
+        }
+    });
+
     document.querySelectorAll('.btn-buy').forEach(btn => {
         btn.addEventListener('click', handleBuy);
         // disable button immediately if stock 0
