@@ -1,13 +1,7 @@
-Website Sistem Manajemen Kost adalah aplikasi berbasis web yang dibuat untuk membantu pengelola kost dalam mengatur data kamar dan penghuni secara lebih terstruktur dan efisien.
-Fitur-Fitur Website yang ada 
-1. Navbar
-Sebagai navigasi utama untuk berpindah halaman (Home dan Tambah Penghuni).
-2. Hero Section
-Menampilkan judul sistem dan deskripsi singkat sebagai pengenalan website.
-3. Dashboard Statistik
-Menampilkan: Total kamar, Kamar terisi dan Kamar kosong
-Berfungsi untuk melihat kondisi kost secara cepat.
-4.  Daftar Kamar Kost
-Menampilkan informasi kamar seperti:Nama kamar, Harga sewa, Status (terisi/kosong) dan Tombol detail
-5. Form Input Data Penghuni
-Digunakan untuk menambahkan data penghuni baru
+Website **Karina Beauty** adalah Sistem Manajemen Skincare yang dikembangkan dari tugas sebelumnya yang awalnya hanya menggunakan HTML, CSS, Bootstrap, dan JavaScript, kemudian pada tugas akhir 3 ini diubah menjadi **website dinamis menggunakan PHP** dengan menambahkan sistem autentikasi menggunakan Session dan Cookies.
+Fitur baru yang ditambahkan adalah: 
+1. sistem login menggunakan PHP Session, Pengguna harus memasukkan username dan password pada halaman login. Jika data yang dimasukkan benar, maka sistem akan membuat session login menggunakan `$_SESSION` dan pengguna akan diarahkan ke halaman utama. Jika pengguna belum login, maka tidak bisa mengakses halaman utama dan akan otomatis diarahkan kembali ke halaman login.
+2. fitur logout, yaitu tombol pada navbar yang berfungsi untuk menghapus session login. Ketika tombol logout diklik, session akan dihapus sehingga pengguna keluar dari sistem dan kembali ke halaman login.
+3. Fitur Remember Me menggunakan Cookies, yaitu ketika checkbox Remember Me dicentang saat login, maka username akan disimpan di dalam cookies selama beberapa hari. Ketika pengguna membuka halaman login kembali, username akan otomatis terisi sehingga pengguna tidak perlu mengetik ulang.
+
+Fitur sebelumnya dari tugas sebelumnya tetap digunakan seperti **Dark Mode untuk mengubah tampilan website, Wishlist untuk menyimpan produk yang dipilih, serta fitur pembelian produk yang dapat mengurangi stok secara otomatis**.
