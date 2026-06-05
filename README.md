@@ -1,38 +1,32 @@
 # Karina Beauty - Sistem Manajemen Skincare
 
-Aplikasi web sederhana untuk manajemen katalog dan inventaris produk skincare (Karina Beauty). Project ini merupakan hasil migrasi dari **PHP Native** menjadi framework **Laravel**.
+Aplikasi web sederhana untuk manajemen katalog produk skincare. Project ini merupakan hasil migrasi bertahap dari **PHP Native** ke framework **Laravel**, dengan mengimplementasikan standar arsitektur MVC secara penuh.
+
+## Implementasi MVC & Eloquent
+Project ini mengaplikasikan materi pembelajaran Laravel tingkat lanjut:
+- **Konsep MVC**: Pemisahan logika secara rapi antara *Model* (Data), *View* (Blade UI), dan *Controller* (Logika backend).
+- **Eloquent Relationship**: Menggunakan relasi antar tabel database (One-to-Many). Tabel `products` berelasi (`belongsTo`) dengan tabel `categories`, sehingga kategori produk diambil secara dinamis dari database, bukan teks *hardcoded*.
+- **Migration & Seeder**: Menggunakan skema database *versioning* (Migration) serta pengisian data awal otomatis berupa *dummy* produk, kategori, dan user admin (Seeder).
 
 ## Fitur Utama
-- **Autentikasi**: Fitur Login & Logout (termasuk fitur *Remember Me*).
-- **Dashboard Katalog**: Menampilkan statistik singkat dan daftar produk skincare beserta harga dan stok.
-- **Manajemen Produk**: Form untuk menambahkan data produk skincare baru ke dalam database.
-- **Wishlist**: Fungsionalitas interaktif UI untuk menyimpan produk ke daftar keinginan (menggunakan JavaScript).
+- **Autentikasi**: Fitur Login & Logout dengan Laravel Auth (mendukung fitur *Remember Me*).
+- **Dashboard Katalog**: Menampilkan statistik serta katalog produk yang datanya diambil dari relasi antar tabel (menampilkan nama kategori dari ID relasi).
+- **Manajemen Produk**: Form penambahan produk baru dengan dropdown *Kategori* yang datanya ditarik dinamis secara *real-time* dari tabel database.
 
-## Teknologi yang Digunakan
-- **Backend**: Laravel (PHP Framework)
-- **Database**: MySQL (telah dimigrasi dari sekadar data hardcoded array)
-- **Frontend**: Blade Templating, Bootstrap 5, Vanilla CSS & JS
-
-## Struktur Folder Migrasi
-- File PHP Native lama masih berada di *root directory*.
-- Project Laravel yang baru berada secara terpisah dan lebih terstruktur di dalam folder `/laravel-app`.
-
-## Cara Menjalankan Project Laravel
+## Cara Menjalankan Project
 1. Masuk ke direktori Laravel:
    ```bash
    cd laravel-app
    ```
-2. Pastikan dependensi sudah terinstal:
-   ```bash
-   composer install
-   ```
-3. Sesuaikan file `.env` dengan kredensial database Anda.
-4. Jalankan migrasi dan seeder untuk membuat tabel dan data awal (termasuk akun user admin & karina):
+2. Pastikan file `.env` sudah dikonfigurasi untuk koneksi MySQL Anda (nama database: `karina_beauty`).
+3. Eksekusi database dan seeder data awal:
    ```bash
    php artisan migrate:fresh --seed
    ```
-5. Nyalakan server lokal:
+4. Jalankan server lokal:
    ```bash
    php artisan serve
    ```
-6. Buka `http://127.0.0.1:8000` di browser dan login menggunakan `admin` dan password `admin123`.
+5. Akses `http://127.0.0.1:8000` di browser dan login dengan:
+   - **Username**: `admin`
+   - **Password**: `admin123`
