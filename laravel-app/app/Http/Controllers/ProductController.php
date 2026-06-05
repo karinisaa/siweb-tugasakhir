@@ -14,18 +14,18 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'     => 'required|string|max:255',
-            'price'    => 'required|integer|min:0',
-            'stok'     => 'required|integer|min:0',
-            'kategori' => 'required|string',
+            'name'        => 'required|string|max:255',
+            'price'       => 'required|integer|min:0',
+            'stok'        => 'required|integer|min:0',
+            'category_id' => 'required|exists:categories,id',
         ]);
 
         Product::create([
-            'name'     => $request->name,
-            'price'    => $request->price,
-            'stok'     => $request->stok,
-            'kategori' => $request->kategori,
-            'img'      => null, // bisa dikembangkan dengan upload gambar nanti
+            'name'        => $request->name,
+            'price'       => $request->price,
+            'stok'        => $request->stok,
+            'category_id' => $request->category_id,
+            'img'         => null,
         ]);
 
         return redirect()->route('home')->with('success', 'Produk berhasil ditambahkan!');

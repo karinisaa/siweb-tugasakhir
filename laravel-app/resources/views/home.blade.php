@@ -50,6 +50,7 @@
                 <img src="{{ asset($p->img) }}" class="card-img-top p-2 rounded-4" alt="{{ $p->name }}">
                 <div class="card-body px-2 py-3 d-flex flex-column">
                     <h6 class="card-title text-truncate mb-1">{{ $p->name }}</h6>
+                    <p class="card-text mb-1"><span class="badge bg-light text-dark border">{{ $p->category ? $p->category->name : '-' }}</span></p>
                     <p class="card-text fw-bold text-pink mb-2">Rp {{ number_format($p->price, 0, ',', '.') }}</p>
                     <p class="stok-text text-muted small mb-3">Stok: {{ $p->stok }}</p>
                     <div class="d-flex justify-content-between">
@@ -88,14 +89,11 @@
             </div>
             <div class="mb-4">
                 <label class="form-label text-muted small fw-bold">Kategori</label>
-                <select name="kategori" class="form-select" required>
+                <select name="category_id" class="form-select" required>
                     <option value="">Pilih Kategori...</option>
-                    <option value="Serum">Serum</option>
-                    <option value="Toner">Toner</option>
-                    <option value="Cleanser">Cleanser</option>
-                    <option value="Moisturizer">Moisturizer</option>
-                    <option value="Sunscreen">Sunscreen</option>
-                    <option value="Bundling">Bundling</option>
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
                 </select>
             </div>
             <button type="submit" class="btn btn-custom-pink w-100 rounded-pill py-2 fw-bold">Simpan</button>
