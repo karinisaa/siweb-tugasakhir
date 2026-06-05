@@ -1,0 +1,212 @@
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+}
+
+:root {
+    --soft-pink: #ffb6c1;
+    --dark-pink: #e75480;
+    --hover-pink: #ffa3b1;
+    --light-bg: #fff5f7;
+}
+
+.text-pink {
+    color: var(--dark-pink) !important;
+}
+
+.brand-text {
+    color: var(--dark-pink);
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+
+.btn-custom-pink {
+    background-color: var(--soft-pink);
+    color: #fff;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-custom-pink:hover {
+    background-color: var(--hover-pink);
+    color: #fff;
+}
+
+.btn-outline-pink {
+    color: var(--dark-pink);
+    border: 1px solid var(--soft-pink);
+    background-color: transparent;
+    transition: 0.3s;
+}
+
+.btn-outline-pink:hover {
+    background-color: var(--soft-pink);
+    color: #fff;
+}
+
+.hero {
+    height: 300px;
+    background-color: var(--soft-pink);
+    color: #fff;
+    background-image: linear-gradient(135deg, #ffc0cb 0%, #ffe4e1 100%);
+}
+
+.hero .badge {
+    color: var(--dark-pink) !important;
+}
+
+/* ===== HERO SECTION ===== */
+.hero-section {
+    width: 100%;
+    height: 90vh;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.15) 0%,
+        rgba(30, 10, 20, 0.55) 60%,
+        rgba(50, 0, 20, 0.75) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    max-width: 680px;
+    padding: 2rem;
+    animation: fadeUp 0.8s ease both;
+}
+
+.hero-title {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    letter-spacing: 3px;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.4);
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+    line-height: 1.7;
+}
+
+.btn-hero-pink {
+    background: rgba(255, 182, 193, 0.25);
+    border: 2px solid #ffb6c1;
+    color: #fff;
+    backdrop-filter: blur(4px);
+    transition: 0.3s;
+}
+
+.btn-hero-pink:hover {
+    background: #e75480;
+    border-color: #e75480;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Dark mode hero overlay tweak */
+body.dark-mode .hero-overlay {
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(10, 0, 10, 0.7) 100%
+    );
+}
+
+
+
+.info-box {
+    transition: 0.3s;
+}
+
+.info-box:hover {
+    border-color: var(--soft-pink) !important;
+    background-color: var(--light-bg) !important;
+}
+
+.product-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: #ffffff;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05) !important;
+}
+
+.product-card img {
+    object-fit: cover;
+    height: 200px;
+    background-color: #fafafa;
+}
+
+.form-card {
+    background-color: var(--light-bg);
+}
+
+.form-control, .form-select {
+    border: 1px solid #eee;
+    padding: 0.6rem 1rem;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--soft-pink);
+    box-shadow: none;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .navbar {
+    background-color: #1e1e1e !important;
+}
+
+body.dark-mode .card, body.dark-mode .info-box, body.dark-mode .form-card {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0;
+    border-color: #333 !important;
+}
+
+body.dark-mode .btn-outline-pink {
+    color: #ffb6c1;
+    border-color: #ffb6c1;
+}
+
+body.dark-mode .btn-outline-pink:hover {
+    background-color: #ffb6c1;
+    color: #121212;
+}
+
+body.dark-mode .text-pink {
+    color: var(--soft-pink) !important;
+}
+
+.d-flex.gap-2.mt-auto {
+    align-items: stretch;
+}
+
+.btn-buy {
+    flex: 2;
+}
+
+.btn-wishlist {
+    flex: 1;
+}
